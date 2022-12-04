@@ -30,7 +30,9 @@ function ShowCountries() {
                     <li class="list-group-item">The total number of infected : ${ct.cases} </li>
                     <li class="list-group-item">Number of active patients : ${ct.active_cases} </li>
                     <li class="list-group-item">Number of tests : ${ct.total_tests}</li>
-                    <li class="list-group-item">Total death toll : ${ct.deaths}</li>
+                    <li class="list-group-item" style="color: red;">Total death toll : ${ct.deaths}</li>
+                    <li class="list-group-item" style="color: green;">Total recovered : ${ct.total_recovered}</li>
+
                 </ul>
                 `
            })
@@ -50,4 +52,41 @@ function ShowCountries() {
 }
 
 ShowCountries();
+
+function Search() {
+    let value = document.querySelector('.search input').value;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'e2d9d837a5msh966c6cea1fabd71p16e85fjsn841affe3c9ec',
+            'X-RapidAPI-Host': 'corona-virus-world-and-india-data.p.rapidapi.com'
+        }
+    };
+    
+    fetch('https://corona-virus-world-and-india-data.p.rapidapi.com/api', options)
+        .then(response => response.json())
+        .then(data => {
+            let html = '';
+            data.countries_stat.forEach(ct => {
+                let exist_prod = ct.country_name.toLowerCase().includes(value.toLowerCase());
+                if (exist_prod) {
+                    html += `
+                    <ul class="list-group countries" >
+                        <li class="list-group-item">Country : ${ct.country_name} </li>
+                        <li class="list-group-item">The total number of infected : ${ct.cases} </li>
+                        <li class="list-group-item">Number of active patients : ${ct.active_cases} </li>
+                        <li class="list-group-item">Number of tests : ${ct.total_tests}</li>
+                        <li class="list-group-item" style="color: red;">Total death toll : ${ct.deaths}</li>
+                        <li class="list-group-item" style="color: green;">Total recovered : ${ct.total_recovered}</li>
+    
+                    </ul>
+                    `
+                }
+            })
+            document.getElementById('List').innerHTML = html
+
+        })
+        .catch(error => console.log(error))
+    
+}
 
