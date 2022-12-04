@@ -1,6 +1,4 @@
 function Show() {
-    let texts = document.querySelectorAll('.txt');
-
     const options = {
         method: 'GET',
         headers: {
@@ -12,16 +10,30 @@ function Show() {
     fetch('https://corona-virus-world-and-india-data.p.rapidapi.com/api', options)
         .then(response => response.json())
         .then(data => {
-          for (const txt of texts) {
-            let  html = `
-            <ul class="list-group countries w-100" >
-                <li class="list-group-item">Country : ${data.countries_stat[txt.parentElement.id].country_name} </li>
-               
-            </ul>
-            `
-                txt.innerHTML= html
-          }
+            let html = '';
+            let limit = "10000";
+            data.countries_stat.forEach(ct => {
+                if (ct.deaths > limit) {
+                    html += `
+                    <ul class="list-group countries" >
+                        <li class="list-group-item">Country : ${ct.country_name} </li>
+                        <li class="list-group-item">The total number of infected : ${ct.cases} </li>
+                        <li class="list-group-item">Number of active patients : ${ct.active_cases} </li>
+                        <li class="list-group-item">Number of tests : ${ct.total_tests}</li>
+                        <li class="list-group-item" style="color: red;">Total death toll : ${ct.deaths}</li>
+                        <li class="list-group-item" style="color: green;">Total recovered : ${ct.total_recovered}</li>
+    
+                    </ul>
+                    `
+                }
+                else{
+                    console.log("--");
+                }
+            })
+            document.getElementById('List10').innerHTML = html
+
         })
         .catch(error => console.log(error))
-       
+    
 }
+Show();
