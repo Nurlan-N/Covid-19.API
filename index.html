@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="/photos/icon.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav_bar">
+                <div class="logo">
+                    <a href="/index.html"><img src="/photos/logo.png" alt=""></a>
+                </div>
+                <div class="menu">
+                    <a href="/top-10.html"><h1 class="btn btn-danger " onclick="ShowTop()"><i class="fa-solid fa-globe"></i> TOP 10 COUNTRIES</h1></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="new_info">
+                    <div class="top">
+                        <div class="time">
+                            <h1 >Statistic taken at : <span id="Time"></span></h1>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="left">
+                            <h1 >Coronavirus Cases: <span id="Cases"></span> </h1>
+                            <h1 >Active Cases: <span id="Acases" style="color: red;"></span></h1>
+                            <h1 >Deaths: <span id="Deaths" style="color: red;"></span></h1>
+                            <h1 >Recovered: <span id="Recovered" style="color: green;"></span></h1>
+                        </div>
+                        <div class="right">
+                            <h1>New Cases : <span id="Ncases"></span></h1>
+                            <h1>New Deaths : <span id="Ndeaths" style="color: red;"></span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="List">
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
