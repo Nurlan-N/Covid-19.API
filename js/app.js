@@ -25,15 +25,17 @@ function ShowCountries() {
            let html = '';
            data.countries_stat.forEach(ct => {
                 html += `
-                <ul class="list-group countries" >
-                    <li class="list-group-item">Country : ${ct.country_name} </li>
-                    <li class="list-group-item">The total number of infected : ${ct.cases} </li>
-                    <li class="list-group-item">Number of active patients : ${ct.active_cases} </li>
-                    <li class="list-group-item">Number of tests : ${ct.total_tests}</li>
-                    <li class="list-group-item" style="color: red;">Total death toll : ${ct.deaths}</li>
-                    <li class="list-group-item" style="color: green;">Total recovered : ${ct.total_recovered}</li>
+                <div class="box col-lg-4">
+                    <ul class="list-group countries"  >
+                        <li class="list-group-item">Country : ${ct.country_name} </li>
+                        <li class="list-group-item">The total number of infected : ${ct.cases} </li>
+                        <li class="list-group-item">Number of active patients : ${ct.active_cases} </li>
+                        <li class="list-group-item">Number of tests : ${ct.total_tests}</li>
+                        <li class="list-group-item" style="color: red;">Total death toll : ${ct.deaths}</li>
+                        <li class="list-group-item" style="color: green;">Total recovered : ${ct.total_recovered}</li>
 
-                </ul>
+                    </ul>
+                </div>
                 `
            })
            document.getElementById('List').innerHTML = html
@@ -71,15 +73,17 @@ function Search() {
                 let exist_prod = ct.country_name.toLowerCase().includes(value.toLowerCase());
                 if (exist_prod) {
                     html += `
-                    <ul class="list-group countries" >
-                        <li class="list-group-item">Country : ${ct.country_name} </li>
-                        <li class="list-group-item">The total number of infected : ${ct.cases} </li>
-                        <li class="list-group-item">Number of active patients : ${ct.active_cases} </li>
-                        <li class="list-group-item">Number of tests : ${ct.total_tests}</li>
-                        <li class="list-group-item" style="color: red;">Total death toll : ${ct.deaths}</li>
-                        <li class="list-group-item" style="color: green;">Total recovered : ${ct.total_recovered}</li>
-    
-                    </ul>
+                    <div class="box col-lg-4">
+                        <ul class="list-group countries"  >
+                            <li class="list-group-item">Country : ${ct.country_name} </li>
+                            <li class="list-group-item">The total number of infected : ${ct.cases} </li>
+                            <li class="list-group-item">Number of active patients : ${ct.active_cases} </li>
+                            <li class="list-group-item">Number of tests : ${ct.total_tests}</li>
+                            <li class="list-group-item" style="color: red;">Total death toll : ${ct.deaths}</li>
+                            <li class="list-group-item" style="color: green;">Total recovered : ${ct.total_recovered}</li>
+
+                        </ul>
+                    </div>
                     `
                 }
             })

@@ -18,22 +18,23 @@ header{
     text-align: end;
 }
 .nav_bar .menu h1{
-    font-size: 100%;
     color: #fff;
     font-weight: bold;
 }
 .nav_bar{
+    width: 100%;
     padding: 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 section{
     padding: 3rem 0 ;
     background-color: rgb(40, 40, 57);
 }
 .countries{
-    width: 32%;
+    width: 100%;
     padding: 10px;
 }
 #List,#List10{
@@ -42,11 +43,8 @@ section{
     flex-wrap: wrap;
     font-weight: bold;
 }
-.top-10 img{
-    width: 100%;
-}
-.top-10 .map{
-    position: relative;
+#List10{
+    
 }
 .location{
     color: rgb(101, 9, 9);
@@ -54,49 +52,6 @@ section{
     position: absolute;
     
     width: 20%;
-}
-.location i{
-    cursor: pointer;
-}
-.l-1{
-    top: 42%;
-    left: 25%;
-}
-.l-2{
-    top: 45%;
-    left: 66%;
-}
-.l-3{
-    top: 60%;
-    left: 35%;
-}
-.l-4{
-    top: 35%;
-    left: 48%;
-}
-.l-5{
-    top: 32%;
-    left: 52%;
-}
-.l-6{
-    top: 32%;
-    left: 58%;
-}
-.l-7{
-    top: 30%;
-    left: 70%;
-}
-.l-8{
-    top: 40%;
-    left: 79%;
-}
-.l-9{
-    top: 40%;
-    left: 50%;
-}
-.l-10{
-    top: 40%;
-    left: 56%;
 }
 .txt{
     width: 50%;
